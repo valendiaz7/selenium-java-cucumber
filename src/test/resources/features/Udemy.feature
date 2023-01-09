@@ -1,5 +1,6 @@
 Feature: Probamos la plataforma de udemy
 
+  @Udemy
   Scenario: Buscamos cursos aplicando filtros
     Given Ingresamos a la home de Udemy
     When Ingreso un criterio de busqueda

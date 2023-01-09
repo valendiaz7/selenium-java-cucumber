@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.UdemyPage;
 
 public class UdemySteps {
@@ -17,7 +18,7 @@ public class UdemySteps {
 
     @When("^Ingreso un criterio de busqueda$")
     public void enterSearchCriteria() {
-        Udemy.enterSearchCriteria();
+        Udemy.enterSearchCriteria("Java con selenium");
     }
 
     @And("^Clickeo en el boton search$")
@@ -32,7 +33,7 @@ public class UdemySteps {
 
     @Then("^Valido la cantidad de cursos disponibles$")
     public void validateResults() {
-        Udemy.validateResults();
+        Assert.assertEquals("436 resultados para “Java con selenium”", Udemy.coursesMessage());
     }
 
 
